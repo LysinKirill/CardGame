@@ -1,4 +1,5 @@
-﻿using ScriptableObjects;
+﻿using Core;
+using ScriptableObjects;
 using System;
 
 namespace Model
@@ -7,17 +8,17 @@ namespace Model
     {
         public int LayoutId;
         public int CardPosition;
-        private CardAsset _cardAsset;
+        public CardAsset CardAsset { get; private set; }
 
         public CardInstance(CardAsset asset)
         {
-            _cardAsset = asset;
+            CardAsset = asset;
         }
 
         public void MoveToLayout(int newLayoutId)
         {
+            CardPosition = CardGame.Instance.GetCardsInLayout(newLayoutId).Count;
             LayoutId = newLayoutId;
-            CardPosition = 0;
         }
     }
 }

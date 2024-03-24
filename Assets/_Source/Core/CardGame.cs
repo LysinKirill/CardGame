@@ -2,6 +2,7 @@
 using ScriptableObjects;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Serialization;
 using View;
@@ -23,11 +24,6 @@ namespace Core
         private List<CardAsset> StartingCards { get; set; } = new List<CardAsset>();
 
         
-        //public List<CardAsset> StartingCards
-        //{
-        //    get { return _startingCards; }
-        //}
-
         public static CardGame Instance
         {
             get
@@ -52,6 +48,15 @@ namespace Core
         {
             StartGame();
         }
+        public List<CardInstance> GetCardsInLayout(int layoutId)
+        {
+            return _cards
+                .Where(pair => pair.Key.LayoutId == layoutId)
+                .Select(pair => pair.Key)
+                .ToList();
+        }
+
+        public CardView GetCardView(CardInstance instance) => _cards[instance];
 
         private void StartGame()
         {
