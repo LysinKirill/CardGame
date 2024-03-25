@@ -27,7 +27,7 @@ namespace Core
             {
                 CardView cardView = CardGame.Instance.GetCardView(cardInstance);
                 var cardTransform = cardView.transform;
-                cardTransform.SetParent(transform);
+                cardTransform.SetParent(transform, false);
                 cardTransform.localPosition = GetLocalPosition(cardInstance);
                 cardTransform.SetSiblingIndex(cardInstance.CardPosition);
                 Rotate(cardView, FaceUp);
@@ -41,7 +41,6 @@ namespace Core
             var height = rect.height;
             var position = Offset * card.CardPosition;
             position.x -= width / 2;
-            //position.y -= height / 2;
             return position;
         }
 
