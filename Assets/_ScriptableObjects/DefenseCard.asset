@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d6797f6857eef16419a603c990b26c98, type: 3}
-  m_Name: CardAsset
+  m_Name: DefenseCard
   m_EditorClassIdentifier: 
-  cardName: Snowball
-  color: {r: 0.99371064, g: 1, b: 1, a: 1}
-  image: {fileID: 21300000, guid: 9f2bdbe69a54afb4280f6f92f9ac16d0, type: 3}
+  cardName: DefenseCard
+  color: {r: 1, g: 1, b: 1, a: 1}
+  image: {fileID: 21300000, guid: 005d1082d19f8ee409a7ff03898e04dc, type: 3}

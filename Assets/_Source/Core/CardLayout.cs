@@ -9,17 +9,12 @@ namespace Core
     public class CardLayout : MonoBehaviour
     {
 
-        [SerializeField]
-        public int LayoutId;
+        [SerializeField] public int LayoutId;
+        [SerializeField] public Vector2 Offset;
 
-        [SerializeField]
-        public Vector2 Offset;
-
-        [field: SerializeField]
-        public bool FaceUp { get; private set; }
+        [field: SerializeField] public bool FaceUp { get; private set; }
         
-        private RectTransform _rectTransform;
-        private void Awake()
+        private RectTransform _rectTransform; private void Awake()
         {
             _rectTransform = GetComponent<RectTransform>();
         }

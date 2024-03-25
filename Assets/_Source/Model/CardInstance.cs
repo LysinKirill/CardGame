@@ -1,6 +1,5 @@
 ﻿using Core;
 using ScriptableObjects;
-using System;
 
 namespace Model
 {
@@ -17,8 +16,10 @@ namespace Model
 
         public void MoveToLayout(int newLayoutId)
         {
+            var oldLayoutId = LayoutId;
             CardPosition = CardGame.Instance.GetCardsInLayout(newLayoutId).Count;
             LayoutId = newLayoutId;
+            CardGame.Instance.RecalculateLayout(oldLayoutId);
         }
     }
 }
